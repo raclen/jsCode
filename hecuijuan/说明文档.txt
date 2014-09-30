@@ -1,0 +1,10 @@
+1、将index.js替换你那个index.js
+2、然后Index.aspx里面中 4 3 2 1改成 1 2 3 4的顺序，看着习惯些，我按这个写的
+3、在base.css中
+.f-l{
+float:left；
+}
+改成
+.f-l{
+float:left !important;
+}
