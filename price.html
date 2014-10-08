@@ -1,0 +1,37 @@
+<html>
+
+<head>
+<title></title>
+<script src="jQuery1.3/js/jquery-1.7.2.min.js"></script>
+<script>
+$(function(){
+  var data=[
+    {'price':'500.00'},
+    {'price':'400.50'},
+    {'price':'300.50'} 
+	  ];
+
+ for(var i=0,len=data.length;i<len;i++){
+	 pic=data[i].price;
+	 aplit(pic);
+	 console.log(sa)
+	 $("#rceln").append('<span class="price">'+sa[0]+'</span>.<span>'+sa[1]+'</span><br/>');
+	 }
+
+})
+ 
+	function aplit(s){
+		 sa=s.split('.');
+ 		 return sa;
+		}
+
+</script>
+</head>
+<style>
+p{ color:rgba(255,0,0,1);}
+.price{ font-size:26px;}
+</style>
+<body>
+<p id="rceln"></p>
+</body>
+</html>
