@@ -1,0 +1,18 @@
+/**
+ * Plugin Popup Style Sheet
+ */
+.popup-box {
+    width: 150px;
+    background: rgba(0, 0, 0, .5);
+    z-index: 99999;
+    position: fixed;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.popup-box p {
+    margin: 10px;
+}
