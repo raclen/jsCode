@@ -5,8 +5,11 @@
 require.config({
     //配置路径
     baseUrl:'common/',
+
     paths:{
         'Zepto':'zepto/zepto.min',
+        'fx' : 'zepto/fx',
+
         //seven
         'seven':'seven/seven',
         'SE.util':'seven/SE.util',
@@ -16,8 +19,15 @@ require.config({
     },
     //配置依赖关系
     shim:{
+
         'Zepto':{
             exports:'$'//起别名
+        },
+        'fx' :{
+            deps :['Zepto']
+        },
+        'seven' :{
+            deps :['Zepto','fx']
         },
         'SE.util':{
             deps:['seven']
@@ -31,7 +41,7 @@ require.config({
     }
 });
 define(function(require,exports,module){
-    require('Zepto');
+    var $ = require('Zepto');
     require('popup');
     require('parseURL');
     //alert("hello");
