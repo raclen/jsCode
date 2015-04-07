@@ -32,9 +32,6 @@ if (!empty($postStr)) {
         $msgType = "text";
         $contentStr = "你好！欢迎关注小情歌微信公众帐号！
 回复相应数字获取信息：
-[1] 之涯的空间
-[2] 发送新浪微博
-[3] 还是之涯的空间
 [XX天气] 查询当地天气预报（如上海天气）
 [XX笑话] 给你讲一则笑话（如发送笑话）
 更多功能陆续开发中
@@ -43,7 +40,7 @@ if (!empty($postStr)) {
         echo $resultStr;
         }
 
-    if ($keyword == '1') {
+    if ($keyword == '11') {
         $msgType = "news";
         $picurl = 'http://ralcenxx1.sinaapp.com/hello/img/big.jpg';
         $url = 'http://user.qzone.qq.com/2275025?wxid='.$fromUsername;
@@ -51,7 +48,7 @@ if (!empty($postStr)) {
         $title = '之涯的空间';
         $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $title, $descr, $picurl, $url);
         echo $resultStr;
-    } elseif ($keyword == '2') {
+    } elseif ($keyword == '21') {
         $msgType = "news";
         $picurl = 'http://ralcenxx1.sinaapp.com/hello/img/big.jpg';
         $url = 'http://ralcenxx1.sinaapp.com/home/?wxid='.$fromUsername;
@@ -61,7 +58,7 @@ if (!empty($postStr)) {
         $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $title, $descr, $picurl, $url);
         echo $resultStr;
     
-    }elseif ($keyword == '3') {
+    }elseif ($keyword == '31') {
         $msgType = "news";
         $picurl = 'http://ralcenxx1.sinaapp.com/hello/img/big.jpg';
         $url = 'http://user.qzone.qq.com/2275025?wxid='.$fromUsername;
@@ -113,7 +110,7 @@ if($placeobj==""){
 </xml>
         ";
    $msgType = "text";
-   $jokeurl="http://api100.duapp.com/joke/?appkey=trialuser";
+   $jokeurl="http://brisk.eu.org/api/joke.php";
     $apistr=file_get_contents($jokeurl);       
     $contentStr = "$apistr";
     $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
@@ -134,13 +131,9 @@ if($placeobj==""){
         ";
         $msgType = "text";
         $contentStr = "回复相应数字获取信息：
-[1] 之涯的空间
-[2] 发送新浪微博
-[3] 还是之涯的空间
 [XX天气] 查询当地天气预报（如上海天气）
 [XX笑话] 给你讲一则笑话（如发送笑话）
 更多功能陆续开发中
-你都标识是$fromUsername
 祝您生活幸福每一天！";
         $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
         echo $resultStr;
