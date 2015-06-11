@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+    <title>省市区三级联动</title>  
+ <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
+    <script src="json/CityJson.js" type="text/javascript"></script>
+    <script src="json/ProJson.js" type="text/javascript"></script>
+    <script src="json/DistrictJson.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $.each(province, function (k, p) { 
+                var option = "<li value='" + p.ProID + "'>" + p.ProName + "</li>";
+                $("#selProvince").append(option);
+				   $("#selProvince li").hide()
+				   	
+            });
+             
+            $("#selProvince span").live('click',function(){
+				
+				$.each(province, function (k, p) { 
+                var option = "<li value='" + p.ProID + "'>" + p.ProName + "</li>";
+                $("#selProvince").append(option);
+			
+				   	
+            });
+			
+            });
+			
+			    $("#selCity span").live('click',function () {
+				var  selValue=$("#selProvince span").attr("value");
+			
+				$.each(city, function (k, p) { 
+				  if (p.ProID == selValue) {
+                var option = "<li value='" + p.CityID + "'>" + p.CityName + "</li>";
+                $("#selCity").append(option);
+				  }
+				   	
+            });
+			
+            });
+			    $("#selDistrict span").live('click',function () {
+			var  selValue=$("#selCity span").attr("value");
+				$.each(District, function (k, p) { 
+				if (p.CityID == selValue) {
+                   var option = "<li value='" + p.Id + "'>" + p.DisName + "</li>";
+                $("#selDistrict").append(option);
+				}
+				   	
+            });
+			
+            });
+			
+			
+			
+				  $("#selProvince li").live('click', function(){
+					  //当省份li点击的时
+					//1.清空省份城市里面数据
+					$("#selProvince").html("");
+					$("#selCity li").remove();
+					$("#selCity span").html("--请选择城市--");
+				
+					  //2.首先把当前点击的值记录下来
+					  var selValue = $(this).val(); 
+					    var selt = $(this).text(); 
+						//然后把当前的值放到身份span（selProvince）中，在这里我们用到append方法
+	  					$("#selProvince ").html( "<span value='" + selValue + "'>" + selt + "<span>");
+                $.each(city, function (k, p) { 
+                    if (p.ProID == selValue) {
+                        var option = "<li value='" + p.CityID + "'>" + p.CityName + "</li>";
+                        $("#selCity").append(option);
+                    }
+                });
+                 
+					  
+					  
+					  })
+               
+             
+            $("#selCity li").live('click',function() {
+				$("#selCity li").remove();
+				$("#selDistrict li").remove();
+				$("#selDistrict span").html("--请选择区/县--");
+                var selValue = $(this).val();
+				var selt = $(this).text(); 
+					$("#selCity").html( "<span value='" + selValue + "'>" + selt + "<span>");
+                $.each(District, function (k, p) {
+                    if (p.CityID == selValue) {
+                        var option = "<li value='" + p.Id + "'>" + p.DisName + "</li>";
+                        $("#selDistrict").append(option);
+                    }
+                }); 
+            }); 
+			  
+            $("#selDistrict li").live('click',function() {
+			 var selValue = $(this).val();
+				
+					var selt = $(this).text(); 
+						$("#selDistrict li").remove();
+						 $("#selDistrict span").html(selt);
+			
+			})
+			
+			
+			
+	
+        });
+    </script>
+</head>
+<style>
+ul{ border:rgba(153,153,153,1) solid 1px; float:left; margin:0 5px;}
+ul li{ list-style:none;}
+
+</style>
+<body>
+    <ul id="selProvince">
+        <span value="0"> --请选择省份--   </span>
+      
+    </ul>
+    <ul id="selCity">
+        <span value="0">--请选择城市--</span>
+      
+    </ul>
+    <ul id="selDistrict">
+        <span value="0">--请选择区/县--</span>
+    </ul>
+    <div style="clear:both"></div>
+ 
+</body>
+</html>
