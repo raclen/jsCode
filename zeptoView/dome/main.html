@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="MobileOptimized">
+    <meta name="viewport" content="width=640,target-densitydpi=device-dpi,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <title>simpleslideview-dome</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body {
+        background-color: #ededed;
+        height: 100%;
+    }
+
+    .wrapper {
+        position: relative;
+        width: 640px;
+    }
+
+    .page {
+        margin-top: 80px;
+    }
+
+    .page nav {
+        width: 100%;
+        height: 80px;
+        line-height: 80px;
+        border: #0076a0 solid 1px;
+        font-size: 36px;
+        padding: 0 30px;
+    }
+
+    ul li {
+        list-style: none;
+        width: 100%;
+        height: 80px;
+        line-height: 80px;
+        border: #0076a0 solid 1px;
+        font-size: 36px;
+        padding: 0 30px;
+    }
+
+    ul a {
+        width: 100%;
+        height: 80px;
+        line-height: 80px;
+        border: #0076a0 solid 1px;
+        font-size: 36px;
+        padding: 0 30px;
+        display: block;
+    }
+
+</style>
+<body>
+<div class="wrapper">
+    <div class="page main view" id="main">
+        <nav>
+            <a href="#ul1" data-pushview>江南春</a>
+        </nav>
+        <nav>
+            <a href="#ul2" data-pushview>咏柳</a>
+        </nav>
+        <nav>
+            <a href="#ul3" data-pushview>小池</a>
+        </nav>
+    </div>
+    <ul style="display:none" id="ul1" class="view">
+        <li>千里莺啼绿映红</li>
+        <li>水村山郭酒旗风</li>
+        <li>南朝四百八十寺</li>
+        <li>多少楼台烟雨中</li>
+        <a href="#main" data-popview>首页</a>
+    </ul>
+    <ul style="display:none" id="ul2" class="view">
+        <li>碧玉妆成一树高</li>
+        <li>万条垂下柳丝绦</li>
+        <li>不知细叶谁裁出</li>
+        <li>二月春风似剪刀</li>
+        <a href="#main" data-popview>首页</a>
+    </ul>
+    <ul style="display:none" id="ul3" class="view">
+        <li>泉眼无声惜细流</li>
+        <li>树阴照水爱晴柔</li>
+        <li>小荷才露尖尖角</li>
+        <li>早有蜻蜓立上头</li>
+        <a href="#main" data-popview>首页</a>
+    </ul>
+
+
+</div>
+</body>
+<script src="../js/require.js" data-main="main.js"></script>
+</html>

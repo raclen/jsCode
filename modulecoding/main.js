@@ -24,5 +24,4 @@ require(['zepto', 'parseURL', 'popup'], function (_z, parseURL, popup) {
     console.log(ourl.topnav);
     console.log();
     popup.popup({msg:'success'})
-
 });
