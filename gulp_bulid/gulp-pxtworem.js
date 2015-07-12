@@ -14,9 +14,10 @@ module.exports = function () {
             this.emit('error', new gutil.PluginError(PLUGIN_NAME, 'Streaming not supported'));
             return cb();
         }
-        var reg=/(\d+)px/ig;
+        //匹配45.33px或者45px
+        var reg=/(\d+\.\d+)px|(\d+)px/ig;
         function med(){
-            var s1=arguments[1];
+            var s1=arguments[0];
             return parseFloat(s1)/100+'rem'
         }
         var content=file.contents.toString().replace(reg,med);
