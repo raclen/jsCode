@@ -1,0 +1,169 @@
+.header .title {
+    text-align: center;
+    line-height: 0.9rem;
+    height: 0.9rem;
+    color: green;
+    background-color: #fff;
+}
+.icon-success{
+    width: 0.76rem;
+    height: 0.8rem;
+    display: inline-block;
+    background: url(/app_images/wanlitong/v40/wap/pay/v2.0/sprite.png) no-repeat -1.4rem -2rem;
+    background-size: 3rem auto;
+    margin-right: 0.2rem;
+    vertical-align: middle;
+}
+.icon-fail{
+    width: 0.76rem;
+    height: 0.8rem;
+    display: inline-block;
+    background: url(/app_images/wanlitong/v40/wap/pay/v2.0/sprite.png) no-repeat -2.12rem -2rem;
+    background-size: 3rem auto;
+    margin-right: 0.2rem;
+    vertical-align: middle;
+}
+.header p {
+    text-align: center;
+    height: 0.7rem;
+    line-height: 0.7rem;
+    border-bottom: #ededed solid 0.01rem;
+}
+.row {
+    position: relative;
+    min-height: 0.88rem;
+    width: 6.4rem;
+    line-height: 0.88rem;
+    border-bottom: 0.01rem solid #ddd;
+}
+.row.r5 {
+    height: 1.2rem;
+    line-height: 1.2rem;
+    text-indent: 0;
+}
+
+.row.r5 .r {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2rem;
+    text-align: right;
+    padding-right: 0.3rem;
+}
+
+.row.r5 .l {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5rem;
+    height: 1.2rem;
+    line-height: 0.6rem;
+}
+
+.row.r5 .l .logo {
+    position: relative;
+    float: left;
+    width: 1rem;
+    height: 1.2rem;
+}
+
+.row.r5 .l .logo img {
+    position: absolute;
+    width: 0.6rem;
+    height: 0.6rem;
+    top: 0.3rem;
+    left: 0.3rem;
+}
+
+.row.r5 .l .detail {
+    float: left;
+    width: 2.8rem;
+    height: 1.2rem;
+}
+
+.row.r5 .l .detail p:first-child {
+    text-align: left;
+    margin-top: 0.25rem;
+}
+
+.row.r5 .l .detail p:nth-of-type(2) {
+    font-size: 0.22rem;
+    color: #999;
+}
+
+.row.r5 .l .detail p {
+    padding: 0;
+    text-align: left;
+    line-height: 0.4rem;
+}
+.cash-name{
+    line-height: 0.7rem !important;
+}
+
+.row.r5 .l .status {
+    float: left;
+    width: 0.6rem;
+    height: 1.2rem;
+    text-align: right;
+    position: relative;
+}
+.con-2{
+    display: none;
+}
+.con-3 a {
+    width: 6rem;
+    display: block;
+    height: 0.88rem;
+    text-align: center;
+    line-height: 0.88rem;
+    margin: 0.3rem auto 0 auto;
+    border-radius: 0.08rem;
+}
+
+.con-3 .continue {
+    background-color: #ff0000;
+    color: #fff;
+    display: none;
+
+}
+
+.con-3 .gobuy {
+    background-color: #fff;
+    color: #000;
+    border: #ccc solid 0.01rem;
+}
+
+.header .tit-fail {
+    padding: 0 0.1rem;
+    background-color: #fff;
+}
+
+.complete .indicator span {
+    width: 0.1rem;
+    height: 0.1rem;
+    border-radius: 0.1rem;
+    display: inline-block;
+    margin-right: 0.1rem;
+    background-color: #fff;
+}
+
+.complete .indicator span.active {
+    background-color: green;
+}
+
+.wlt-txt {
+    font-size: 1.1rem;
+    margin: 0.03rem 0;
+}
+
+.wlt-points {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.i-wlt {
+    float: left;
+}
+.listPoints{
+    display: none;
+}

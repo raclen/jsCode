@@ -1,0 +1,148 @@
+.hd-cash {
+    padding: 0 30px;
+    display: -webkit-box;
+    display: box;
+    -webkit-box-pack: justify;
+    height: 88px;
+    line-height: 88px;
+    background-color: #fff;
+    border-bottom: #ccc solid 1px;
+}
+
+.hd-cash span {
+    display: block;
+}
+
+.con-1 {
+    background-color: #fff;
+    margin: 20px 0;
+
+}
+
+.con-1 img {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.con-1 ul {
+    padding-left: 30px;
+    border-bottom: #ccc solid 1px;
+    border-top: #ccc solid 1px;
+}
+
+.con-1 ul li {
+    display: -webkit-box;
+    display: box;
+    -webkit-box-pack: justify;
+    height: 88px;
+    line-height: 88px;
+    padding-right: 30px;
+    border-bottom: #ccc solid 1px;
+}
+
+.con-1 ul li:last-child {
+    border-bottom: none;
+}
+
+.con-1 ul li span {
+    display: block;
+}
+
+.con-2 {
+    background: #fff;
+    border-bottom: #ccc solid 1px;
+    border-top: #ccc solid 1px;
+}
+
+.con-2 .ul-pay li:nth-of-type(1) {
+    border-bottom: #ededed solid 1px;
+}
+
+.con-2 .ul-pay li {
+    padding: 20px 0px;
+    margin: 0 30px;
+    display: none;
+}
+
+.con-2 .ul-pay li:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+.ul-pay .pdw {
+    width: 80%;
+    height: 46px;
+    line-height: 46px;
+}
+
+.ul-pay .captcha {
+    width: 40%;
+    line-height: 46px;
+    height: 46px;
+    float: left;
+}
+
+.ul-pay input {
+    border: none;
+    font-size: 28px;
+}
+
+.ul-pay li {
+    /*display: none;*/
+}
+
+.ul-pay .get-code {
+    display: inline-block;
+    width: 176px;
+    height: 46px;
+    background-color: #ededed;
+    color: #000;
+    text-align: center;
+    line-height: 46px;
+    border: #ccc solid 1px;
+    border-radius: 10px;
+    float: right;
+    margin-left: 20px;
+    margin-top: 4px;
+}
+
+.ul-pay .get-code.dis {
+    background-color: #ededed;
+    pointer-events: none;
+    color: #ccc;
+}
+
+.btn-pay {
+    width: 576px;
+    display: block;
+    height: 88px;
+    background-color: #006DD9;
+    color: #fff;
+    line-height: 88px;
+    text-align: center;
+    margin: 30px auto;
+
+}
+
+.btn-pay.disable {
+    pointer-events: none;
+    background-color: #94beef;
+    color: #e7eef9;
+}
+
+.con-3 p {
+    text-align: center;
+    margin-top: 20px;
+    display: none;
+    font-size: 24px;
+}
+
+.con-3 p.show {
+    display: block;
+}
+
+

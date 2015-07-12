@@ -1,0 +1,169 @@
+.header .title {
+    text-align: center;
+    line-height: 90px;
+    height: 90px;
+    color: green;
+    background-color: #fff;
+}
+.icon-success{
+    width: 76px;
+    height: 80px;
+    display: inline-block;
+    background: url(/app_images/wanlitong/v40/wap/pay/v2.0/sprite.png) no-repeat -140px -200px;
+    background-size: 300px auto;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+.icon-fail{
+    width: 76px;
+    height: 80px;
+    display: inline-block;
+    background: url(/app_images/wanlitong/v40/wap/pay/v2.0/sprite.png) no-repeat -212px -200px;
+    background-size: 300px auto;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+.header p {
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+    border-bottom: #ededed solid 1px;
+}
+.row {
+    position: relative;
+    min-height: 88px;
+    width: 640px;
+    line-height: 88px;
+    border-bottom: 1px solid #ddd;
+}
+.row.r5 {
+    height: 120px;
+    line-height: 120px;
+    text-indent: 0;
+}
+
+.row.r5 .r {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    text-align: right;
+    padding-right: 30px;
+}
+
+.row.r5 .l {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 120px;
+    line-height: 60px;
+}
+
+.row.r5 .l .logo {
+    position: relative;
+    float: left;
+    width: 100px;
+    height: 120px;
+}
+
+.row.r5 .l .logo img {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 30px;
+    left: 30px;
+}
+
+.row.r5 .l .detail {
+    float: left;
+    width: 280px;
+    height: 120px;
+}
+
+.row.r5 .l .detail p:first-child {
+    text-align: left;
+    margin-top: 25px;
+}
+
+.row.r5 .l .detail p:nth-of-type(2) {
+    font-size: 22px;
+    color: #999;
+}
+
+.row.r5 .l .detail p {
+    padding: 0;
+    text-align: left;
+    line-height: 40px;
+}
+.cash-name{
+    line-height: 70px !important;
+}
+
+.row.r5 .l .status {
+    float: left;
+    width: 60px;
+    height: 120px;
+    text-align: right;
+    position: relative;
+}
+.con-2{
+    display: none;
+}
+.con-3 a {
+    width: 600px;
+    display: block;
+    height: 88px;
+    text-align: center;
+    line-height: 88px;
+    margin: 30px auto 0 auto;
+    border-radius: 8px;
+}
+
+.con-3 .continue {
+    background-color: #ff0000;
+    color: #fff;
+    display: none;
+
+}
+
+.con-3 .gobuy {
+    background-color: #fff;
+    color: #000;
+    border: #ccc solid 1px;
+}
+
+.header .tit-fail {
+    padding: 0 10px;
+    background-color: #fff;
+}
+
+.complete .indicator span {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-right: 10px;
+    background-color: #fff;
+}
+
+.complete .indicator span.active {
+    background-color: green;
+}
+
+.wlt-txt {
+    font-size: 1.1rem;
+    margin: 3px 0;
+}
+
+.wlt-points {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.i-wlt {
+    float: left;
+}
+.listPoints{
+    display: none;
+}

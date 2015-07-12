@@ -1,0 +1,148 @@
+.hd-cash {
+    padding: 0 0.3rem;
+    display: -webkit-box;
+    display: box;
+    -webkit-box-pack: justify;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    background-color: #fff;
+    border-bottom: #ccc solid 0.01rem;
+}
+
+.hd-cash span {
+    display: block;
+}
+
+.con-1 {
+    background-color: #fff;
+    margin: 0.2rem 0;
+
+}
+
+.con-1 img {
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-right: 0.2rem;
+}
+
+.con-1 ul {
+    padding-left: 0.3rem;
+    border-bottom: #ccc solid 0.01rem;
+    border-top: #ccc solid 0.01rem;
+}
+
+.con-1 ul li {
+    display: -webkit-box;
+    display: box;
+    -webkit-box-pack: justify;
+    height: 0.88rem;
+    line-height: 0.88rem;
+    padding-right: 0.3rem;
+    border-bottom: #ccc solid 0.01rem;
+}
+
+.con-1 ul li:last-child {
+    border-bottom: none;
+}
+
+.con-1 ul li span {
+    display: block;
+}
+
+.con-2 {
+    background: #fff;
+    border-bottom: #ccc solid 0.01rem;
+    border-top: #ccc solid 0.01rem;
+}
+
+.con-2 .ul-pay li:nth-of-type(1) {
+    border-bottom: #ededed solid 0.01rem;
+}
+
+.con-2 .ul-pay li {
+    padding: 0.2rem 0rem;
+    margin: 0 0.3rem;
+    display: none;
+}
+
+.con-2 .ul-pay li:after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    overflow: hidden;
+}
+
+.ul-pay .pdw {
+    width: 80%;
+    height: 0.46rem;
+    line-height: 0.46rem;
+}
+
+.ul-pay .captcha {
+    width: 40%;
+    line-height: 0.46rem;
+    height: 0.46rem;
+    float: left;
+}
+
+.ul-pay input {
+    border: none;
+    font-size: 0.28rem;
+}
+
+.ul-pay li {
+    /*display: none;*/
+}
+
+.ul-pay .get-code {
+    display: inline-block;
+    width: 1.76rem;
+    height: 0.46rem;
+    background-color: #ededed;
+    color: #000;
+    text-align: center;
+    line-height: 0.46rem;
+    border: #ccc solid 0.01rem;
+    border-radius: 0.1rem;
+    float: right;
+    margin-left: 0.2rem;
+    margin-top: 0.04rem;
+}
+
+.ul-pay .get-code.dis {
+    background-color: #ededed;
+    pointer-events: none;
+    color: #ccc;
+}
+
+.btn-pay {
+    width: 5.76rem;
+    display: block;
+    height: 0.88rem;
+    background-color: #006DD9;
+    color: #fff;
+    line-height: 0.88rem;
+    text-align: center;
+    margin: 0.3rem auto;
+
+}
+
+.btn-pay.disable {
+    pointer-events: none;
+    background-color: #94beef;
+    color: #e7eef9;
+}
+
+.con-3 p {
+    text-align: center;
+    margin-top: 0.2rem;
+    display: none;
+    font-size: 0.24rem;
+}
+
+.con-3 p.show {
+    display: block;
+}
+
+

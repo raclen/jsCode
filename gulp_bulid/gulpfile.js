@@ -12,6 +12,7 @@ var gulp = require('gulp');
 var imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
     cache = require('gulp-cache'),
+    px2rem= require('./gulp-pxtworem.js'),
     notify = require('gulp-notify');//提示信息
 /**
  * 一般事件的定义放在事件调用的上面，这里我们也把'任务'写到前面
@@ -28,6 +29,13 @@ gulp.task('img', function () {
         .pipe(notify({message: 'img task ok'}));
 
 });
+gulp.task('pxtworem', function () {
+    return gulp.src('src/img/event_life/css/*.css')
+        .pipe(px2rem())
+        .pipe(gulp.dest('./dest/img/event_life/css'))
+        .pipe(notify({message: 'img task ok'}));
+
+});
 /**
  *gulp 命令会执行defalut
  *我们只需要把要执行执行的函数都放在这个函数（或者事件，就像jquery的ready）里面
@@ -35,7 +43,8 @@ gulp.task('img', function () {
  */
 gulp.task('default', function () {
     console.log('common in default');
-    gulp.run('img');
+    //gulp.run('img');
+    gulp.run('pxtworem');
 
 })
 console.log('end ...');//

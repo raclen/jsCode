@@ -1,0 +1,82 @@
+.paystatus .pic{
+    background: url("/app_images/wanlitong/v40/wap/pay/v2.0/order_status.png") center;
+    background-size: cover;
+    width: 2.88rem;
+    height: 3rem;
+    margin: 1.3rem auto 0.56rem auto;
+    position: relative;
+}
+.paystatus p{
+    font-size: 0.28rem;
+    font-weight: bold;
+    text-align: center;
+
+}
+.paystatus p:nth-of-type(2){
+    color: #ff0000;
+    margin-top: 1em;
+}
+
+#circleG{
+    width: 149.0.33rem;
+    position: absolute;
+    top: 1.4rem;
+    left: 0.62rem;
+}
+
+.circleG{
+    background-color:#4DA6FF;
+    float:left;
+    height:0.32rem;
+    margin-left:0.17rem;
+    width:0.32rem;
+    -webkit-animation-name:bounce_circleG;
+    -webkit-animation-duration:1.9500000000000002s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-direction:normal;
+    -webkit-border-radius:0.21rem;
+    animation-name:bounce_circleG;
+    animation-duration:1.9500000000000002s;
+    animation-iteration-count:infinite;
+    animation-direction:normal;
+    border-radius:0.21rem;
+}
+
+#circleG_1{
+    -webkit-animation-delay:0.39s;
+    animation-delay:0.39s;
+}
+
+#circleG_2{
+    -webkit-animation-delay:0.9099999999999999s;
+    animation-delay:0.9099999999999999s;
+}
+
+#circleG_3{
+    -webkit-animation-delay:1.1700000000000002s;
+    animation-delay:1.1700000000000002s;
+}
+
+@-webkit-keyframes bounce_circleG{
+    0%{
+    }
+
+    50%{
+        background-color:#007CFF}
+
+    100%{
+    }
+
+}
+
+@keyframes bounce_circleG{
+    0%{
+    }
+
+    50%{
+        background-color:#007CFF}
+
+    100%{
+    }
+
+}

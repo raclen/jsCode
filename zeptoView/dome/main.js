@@ -11,7 +11,7 @@ require.config({
             deps: ['../js/zepto', '../js/zepto.scroll']
         }
     }
-})
+});
 require(['../js/zepto', '../js/zepto.scroll', '../js/simpleslideview'], function () {
     $('.wrapper').simpleSlideView({duration: 250});
-})
+});

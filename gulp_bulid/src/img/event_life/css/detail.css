@@ -1,0 +1,618 @@
+
+li .s-body:last-child {
+    border-bottom: 1px solid #ddd;
+}
+
+li .s-footer {
+    height: 50px;
+    line-height: 50px;
+    color: #999;
+    font-size: 24px;
+    text-align: center;
+}
+
+li .row {
+    position: relative;
+    min-height: 88px;
+    width: 640px;
+    line-height: 88px;
+    border-bottom: 1px solid #ddd;
+}
+
+li .row-span {
+    padding: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+li .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+li .row:last-child {
+    border-bottom: none;
+}
+
+li .row p {
+    text-align: right;
+    padding: 0 30px;
+}
+
+li .row p label {
+    display: inline-block;
+    float: left;
+    text-align: left;
+}
+
+li .row p.sum {
+    height: 80px;
+    line-height: 80px;
+    font-size: 28px;
+}
+
+li .row p.discount {
+    font-size: 24px;
+    height: 50px;
+    line-height: 50px;
+    display: none;
+}
+
+li .row input {
+    border: none;
+    font-size: 28px;
+}
+
+li .row.r6 p {
+    color: #999;
+    height: 80px;
+    line-height: 44px;
+    font-size: 24px;
+    float: right;
+    position: relative;
+    padding: 20px 0 20px 60px;
+}
+
+li .row.r6 p:nth-of-type(1) {
+    padding: 20px 30px 20px 0;
+    float: right;
+}
+
+li .row.r6 .ico {
+    position: absolute;
+    top: 30px;
+    left: 240px;
+}
+
+li .row-2 {
+    position: relative;
+    min-height: 90px;
+    line-height: 90px;
+    height: 90px;
+    margin: 0 30px;
+}
+
+li .row-2 .l {
+    float: left;
+    position: relative;
+    display: inline-block;
+    width: 40%;
+}
+
+.li-04 {
+    margin-top: 20px;
+}
+
+li .row-4 {
+    margin: 0 30px;
+    padding: 10px 0;
+
+}
+
+li .row-4 .l {
+    float: left;
+    position: relative;
+    display: inline-block;
+    width: 440px;
+}
+
+li .row-4 .r {
+    float: left;
+    position: relative;
+    display: inline-block;
+    text-align: right;
+    font-size: 28px;
+    width: 130px;
+}
+
+li .row-4 .r i {
+    margin-top: 20px;
+}
+
+li .row.r2 .l {
+    width: 320px;
+    text-indent: 80px;
+}
+
+li .row-2 .r {
+    float: left;
+    position: relative;
+    display: inline-block;
+    text-align: right;
+    font-size: 28px;
+    width: 60%;
+}
+
+li .row.r2 .r {
+    width: 300px;
+}
+
+li .row.r3 .r {
+    width: 100px;
+}
+
+li .row.r4 .r {
+    width: 100px;
+}
+
+li .row-2 img,
+.info-pup img {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+}
+
+li .row .ico {
+    position: absolute;
+    top: 14px;
+    left: 0;
+}
+
+.txt-input {
+    width: 170px;
+    height: 54px;
+    color: #ff7f00;
+    text-align: right;
+    border: #ccc solid 1px;
+    font-size: 28px;
+}
+
+.btn-confirm {
+    display: block;
+    width: 580px;
+    height: 88px;
+    line-height: 88px;
+    text-align: center;
+    background: #4D7AFF;
+    color: #fff;
+    font-size: 32px;
+    margin: 20px auto 0 auto;
+}
+
+li .row.r5 {
+    height: 120px;
+    line-height: 120px;
+    text-indent: 0;
+}
+
+li .row.r5 .r {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    text-align: right;
+    padding-right: 30px;
+}
+
+li .row.r5 .l {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 120px;
+    line-height: 60px;
+}
+
+li .row.r5 .l .logo {
+    position: relative;
+    float: left;
+    width: 100px;
+    height: 120px;
+}
+
+li .row.r5 .l .logo img {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 30px;
+    left: 30px;
+}
+
+li .row.r5 .l .detail {
+    float: left;
+    width: 280px;
+    height: 120px;
+}
+
+li .row.r5 .l .detail p:first-child {
+    text-align: left;
+    margin-top: 25px;
+}
+
+li .row.r5 .l .detail p:nth-of-type(2) {
+    font-size: 22px;
+    color: #999;
+}
+
+li .row.r5 .l .detail p {
+    padding: 0;
+    text-align: left;
+    line-height: 40px;
+}
+
+li .row.r5 .l .status {
+    float: left;
+    width: 60px;
+    height: 120px;
+    text-align: right;
+    position: relative;
+}
+
+.i-info {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    background: url(/app_images/wanlitong/v40/wap/pay/v2.0/sprite.png) no-repeat -1px -74px;
+    background-size: 300px auto;
+    position: absolute;
+    left: -10px;
+    top: 24px;
+}
+
+.i-other {
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    background: url(/app_images/wanlitong/v40/wap/pay/v2.0/sprite.png) no-repeat -1px -188px;
+    background-size: 300px auto;
+    left: -10px;
+    top: 24px;
+    float: left;
+}
+
+.li-02{
+    margin: 20px 0;
+}
+.li-05{
+    margin-top: 20px;
+}
+.li-03,
+.li-cust,
+.li-04,
+.li-05{
+    display: none;
+}
+/*积分详情弹出框*/
+.info-pup {
+    position: fixed;
+    width: 480px;
+    background-color: #fff;
+    margin-left: -240px;
+    left: 50%;
+    top: 38%;
+    text-align: center;
+    opacity: 0;
+    -webkit-transform: scale(0.7);
+    transform: scale(0.7);
+    z-index: 100;
+    -webkit-animation: show-info .3s forwards ease-out;
+    animation: show-info .3s forwards ease-out;
+    display: none;
+}
+
+@-webkit-keyframes show-info {
+    50% {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        opacity: .7;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.info-pup div:nth-of-type(1) {
+    font-weight: bold;
+    height: 100px;
+    line-height: 100px;
+    border-bottom: solid #ccc 1px;
+
+}
+
+.info-pup div:nth-of-type(2) {
+    padding: 0 30px;
+    line-height: 88px;
+}
+
+.info-pup div:nth-of-type(3) {
+    color: #999;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+}
+
+.info-pup a {
+    display: block;
+    width: 420px;
+    border-radius: 4px;
+    background-color: #0076FF;
+    height: 74px;
+    line-height: 74px;
+    color: #fff;
+    margin: 20px auto 30px auto;
+}
+
+/*快捷支付弹出框*/
+.c-dialog {
+    width: 480px;
+    position: fixed;
+    left: 50%;
+    margin-left: -240px;
+    bottom: 270px;
+    z-index: 110;
+    text-align: center;
+    background-color: #F6F6F6;
+    opacity: 0;
+    animation: slit .7s forwards ease-out;
+    -webkit-animation: slit .7s forwards ease-out;
+    transform: translateZ(3000px) rotateY(180deg);
+    -webkit-transform: translateZ(3000px) rotateY(180deg);
+    display: none;
+
+
+}
+
+@-webkit-keyframes slit {
+    20% {
+        transform: translateZ(250px) rotateY(90deg);
+        -webkit-transform: translateZ(250px) rotateY(90deg);
+        opacity: .5;
+        animation-timing-function: ease-out;
+        -webkit-animation-timing-function: ease-out;
+    }
+    50% {
+        transform: translateZ(250px) rotateY(0deg);
+        -webkit-transform: translateZ(250px) rotateY(0deg);
+        opacity: .5;
+        animation-timing-function: ease-out;
+        -webkit-animation-timing-function: ease-out;
+    }
+    100% {
+        transform: translateZ(0) rotateY(0deg);
+        -webkit-transform: translateZ(0) rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+.i-close {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    background: url(/app_images/wanlitong/v40/wap/pay/v2.0/sprite.png) no-repeat -80px -200px;
+    background-size: 300px auto;
+    position: absolute;
+    right: -26px;
+    top: -26px;
+}
+
+.c-dialog .c-p-1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 30px;
+
+}
+
+.c-dialog .c-p-2 {
+    color: red;
+    font-size: 22px;
+    padding: 20px 0;
+    border-bottom: #ccc solid 1px;
+
+}
+
+.c-dialog .c-p-3 {
+    font-size: 22px;
+    display: none;
+    padding: 20px 0;
+    border-bottom: #ccc solid 1px;
+}
+
+.c-dialog .c-p-4 {
+    font-size: 24px;
+}
+
+.c-dialog .c-form {
+    margin: 20px 0;
+}
+
+.c-form p {
+    width: 420px;
+    height: 82px;
+    border: #ccc solid 1px;
+    margin: 0 auto;
+    line-height: 82px;
+    text-align: left;
+    text-indent: 10px;
+    background-color: #fff;
+    font-size: 24px;
+    display: none;
+}
+
+.c-form p input {
+    height: 35px;
+    font-size: 24px;
+    border: none;
+    display: inline-block;
+}
+
+.c-form #pwd {
+    width: 90%;
+}
+
+.c-form #captcha {
+    width: 200px;
+}
+
+.c-form #btn_code {
+    width: 160px;
+    height: 42px;
+    color: #000;
+    line-height: 42px;
+    border: #999 solid 1px;
+    display: inline-block;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.c-form #btn_code.dis {
+    color: #ccc;
+    pointer-events: none;
+}
+
+.c-dialog .btn {
+    width: 420px;
+    height: 72px;
+    border: #ccc solid 1px;
+    display: block;
+    line-height: 72px;
+    margin: 0 auto;
+    border-radius: 6px;
+
+}
+
+.c-dialog .btn.btn-c {
+    background-color: #0076FF;
+    color: #fff;
+    margin: 20px auto;
+
+}
+
+.c-dialog .btn.btn-return {
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.i-arrow {
+    vertical-align: middle;
+}
+
+.row-txt {
+    padding-top: 10px;
+
+}
+
+.row-txt p:nth-of-type(2) {
+    color: #999;
+    font-size: 24px;
+
+}
+
+.i-off {
+    width: 104px;
+    height: 64px;
+    display: inline-block;
+    background: url(/app_images/wanlitong/v40/wap/pay/v2.0/sprite.png) no-repeat -128px -10px;
+    background-size: 300px auto;
+    float: right;
+}
+
+.i-on {
+    width: 104px;
+    height: 64px;
+    display: inline-block;
+    background: url(/app_images/wanlitong/v40/wap/pay/v2.0/sprite.png) no-repeat -10px -10px;
+    background-size: 300px auto;
+    float: right;
+}
+/*其他积分*/
+.other {
+    z-index: 4;
+    top: 0;
+    left: 0;
+    -webkit-transform: translateX(640px);
+    transform: translateX(640px);
+    -webkit-transition:all 0.4s;
+    transition:all 0.4s;
+    height: 0;
+}
+.other.show{
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+.other .hd-cash {
+    padding: 0 30px;
+    display: -webkit-box;
+    display: box;
+    -webkit-box-pack: justify;
+    height: 88px;
+    line-height: 88px;
+    background-color: #fff;
+    border-bottom: #ccc solid 1px;
+}
+
+.other .hd-cash span {
+    display: block;
+}
+
+.other .s-body{
+    padding-left: 30px;
+    margin-top: 20px;
+}
+.other .s-body .pic{
+    border-bottom: #ccc solid 1px;
+
+}
+.other .s-body p{
+    height: 88px;
+    line-height: 88px;
+    padding-right: 30px;
+}
+.other .s-body .pic img{
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    margin-right: 20px;
+}
+.other .s-body .i-info{
+    position: static;
+    vertical-align: middle;
+    margin-top: -18px;
+}
+.other .s-body .i-off,
+.other .s-body .i-on{
+    margin-top: 16px;
+}
+.other .points-txt{
+    font-size: 24px;
+    color: #999;
+}
+.other .btn-return{
+    display: block;
+    background-color:#4D7AFF;
+    text-align: center;
+    width: 574px;
+    height: 88px;
+    line-height: 88px;
+    color: #fff;
+    margin: 20px auto 0 auto;
+}
+.other .lit{
+    font-size: 24px;
+    margin-top: 20px;
+    padding: 0 30px;
+}

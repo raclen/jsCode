@@ -1,0 +1,38 @@
+.hd-cash {
+    padding: 0 30px;
+    display: -webkit-box;
+    display: box;
+    -webkit-box-pack: justify;
+    height: 88px;
+    line-height: 88px;
+    background-color: #fff;
+    border-bottom: #ccc solid 1px;
+}
+
+.hd-cash span {
+    display: block;
+}
+
+.points-list {
+    display: block;
+    font-size: 28px;
+    padding: 20px 30px;
+    background-color: #fff;
+    color: #000;
+    /*display: none;*/
+}
+
+.points-list {
+    margin-bottom: 20px;
+}
+
+.points-list img {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.paycash .i-arrow {
+    float: right;
+}
