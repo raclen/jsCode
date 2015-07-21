@@ -1,0 +1,49 @@
+/**
+ * Plugin Dialog Style Sheet
+ */
+.wlt-dialog {
+    background-color: #f6f6f6;
+    border-radius: 1px;
+    width: 480px;
+    display: inline-block;
+    font-size: 28px;
+    text-align: left;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.wlt-dialog .title{
+    height: 96px;
+    line-height: 96px;
+    font-weight: bold;
+}
+.wlt-dialog p {
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+.wlt-dialog span {
+    border-top: 1px solid #D8D8D8;
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    padding: 15px 0;
+}
+
+.wlt-dialog .btn {
+    text-align: center;
+    display: block;
+    width: 420px;
+    height: 70px;
+    line-height: 70px;
+    margin: 10px auto;
+    background-color: #0076ff;
+    color: #fff;
+}
+.wlt-dialog .btn:nth-of-type(2){
+    background-color: #fff;
+    color: #000;
+    border: #ccc solid 1px;
+}

@@ -3,7 +3,7 @@
  * 这是一个新代码
  */
 var through = require('through2');
-module.exports = function () {
+module.exports = function (opts) {
     return through.obj(function (file, enc, cb) {
         if (file.isNull()) {
             this.push(file);
@@ -18,7 +18,7 @@ module.exports = function () {
         var reg=/(\d+\.\d+)px|(\d+)px/ig;
         function med(){
             var s1=arguments[0];
-            return parseFloat(s1)/100+'rem'
+            return parseFloat(s1)/opts.number+'rem'
         }
         var content=file.contents.toString().replace(reg,med);
         file.contents = new Buffer(content);

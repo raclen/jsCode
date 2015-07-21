@@ -31,7 +31,7 @@ gulp.task('img', function () {
 });
 gulp.task('pxtworem', function () {
     return gulp.src('src/img/event_life/css/*.css')
-        .pipe(px2rem())
+        .pipe(px2rem({number:100}))
         .pipe(gulp.dest('./dest/img/event_life/css'))
         .pipe(notify({message: 'img task ok'}));
 
