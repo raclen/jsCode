@@ -215,7 +215,27 @@ slide.prototype = {
         },16);
     },
     extend:function(target,source){
-        for(var key in source) target[key] = source[key];
+        for (var key in source) target[key] = source[key];
         return target;
     }
+}
+
+//a.ation
+//b.action
+//如果你要先执行a方法，后执行b.action
+$.ajax({
+    url: 'a.action',
+    success:function(){
+        b();
+    }
+})
+
+function b(){
+    $.ajax({
+        url: 'b.action',
+        success:function(){
+            //dosomething()
+
+        }
+    })
 }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>判断滑动方向</title>
+</head>
+<style>
+    html{
+        height: 100%;
+    }
+    body{
+        height: 100%;
+        background-color: #f47500;
+    }
+</style>
+<body>
+
+</body>
+<script>
+    var touchStartClientX,touchStartClientY, direction;
+    document.addEventListener('touchstart',function(e){
+        touchStartClientX= e.touches[0].clientX;
+        touchStartClientY=e.touches[0].clientY;
+        //console.log(touchStartClientX+','+touchStartClientY);
+    })
+    document.addEventListener('touchend',function(e){
+        var touchendClientX,touchendClientY;
+        touchendClientX= e.changedTouches[0].clientX;
+        touchendClientY=e.changedTouches[0].clientY;
+        //console.log(touchendClientX+','+touchendClientY);
+        var sx=touchendClientX-touchStartClientX;
+        var sy=touchendClientY-touchStartClientY;
+        console.log(sx+','+sy);
+  /*      if(Math.abs(sx)>Math.abs(sy)){
+            if(sx>0)
+                direction='right';
+            else
+                direction='left';
+        }else{
+            if(sy>0)
+                direction='down';
+            else
+                direction='up';
+        }*/
+        direction=Math.abs(sx)>Math.abs(sy)?(sx>0?'right':'left'):(sy>0?'down':'up');
+        alert('direction='+direction);
+    })
+</script>
+</html>
