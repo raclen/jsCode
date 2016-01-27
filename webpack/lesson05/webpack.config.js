@@ -7,7 +7,7 @@ module.exports = {
     entry: {
         app: "./main.js",
         vendor: ["./jquery-latest.js"]
-},
+    },
 
     output: {
         filename: "bundle.js"

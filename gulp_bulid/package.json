@@ -5,18 +5,24 @@
   "main": "gulp-pxtworem.js",
   "dependencies": {
     "gulp": "^3.8.11",
-    "gulp-imagemin": "^2.2.1",
-    "gulp-util": "^3.0.4",
     "gulp-cache": "^0.2.8",
-    "gulp-uglify": "^1.1.0",
-    "imagemin-pngquant": "^4.0.0",
-    "gulp-notify": "^2.2.0",
-    "gulp-concat": "^2.5.2",
-    "through2": "^2.0.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.2.1",
     "gulp-jshint": "^1.9.2",
-    "gulp-minify-css": "^0.5.1"
+    "gulp-minify-css": "^0.5.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.1.0",
+    "gulp-util": "^3.0.4",
+    "imagemin-pngquant": "^4.2.0",
+    "through2": "^2.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "imagemin-pngcrush": "^4.1.0",
+    "imagemin-pngquant": "^4.2.0",
+    "pngquant": "^0.5.0",
+    "pngquant-bin": "^3.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
