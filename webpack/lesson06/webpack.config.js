@@ -5,9 +5,9 @@
  * 使用exports会在没有模块定位的文件后面把你写的变量挂载到 module.exports上，这样就成了commonjs规范
  * 例如
  * /*** EXPORTS FROM exports-loader ***/
-	//module.exports = Zepto;
-    //因此使用exports-loader更符合webpack的加载思想
- */
+//module.exports = Zepto;
+//因此使用exports-loader更符合webpack的加载思想
+
 var webpack = require('webpack');
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('./dist/js/common.js');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -19,6 +19,7 @@ module.exports = {
         app: "./src/js/app.js",
     },
     output: {
+        // filename: "./dist/js/[name]_[hash:6].js"
         filename: "./dist/js/[name].min.js"
     },
     plugins: [
@@ -36,7 +37,7 @@ module.exports = {
       ]
   },
   resolve: {
-    //    root: 'D:/raclen/jsCode/webpack/lesson06/', //绝对路径
+       root: 'D:/raclen/jsCode/webpack/lesson06/', //绝对路径
        extensions: ['', '.js', '.json', '.scss']
    }
 

@@ -10,3 +10,12 @@ var Zepto = require('./zepto.js');
 console.log(Zepto.trim)
 // console.log(app.get())
 console.log(jquery.ajax);
+var loadlazy = require("bundle?lazy!./lazy.js");
+
+// 只有在调用load的时候才会真正加载
+jquery('.test').on('click',function(){
+    loadlazy(function(m) {
+        console.log(m.get())
+
+    });
+})
