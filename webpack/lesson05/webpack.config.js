@@ -3,6 +3,7 @@
  * 这是一个新代码
  */
 var webpack = require('webpack');
+
 module.exports = {
     entry: {
         app: "./main.js",
@@ -14,6 +15,14 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"common.js")
-    ]
+    ],
+    module: {
+      //加载器配置
+      loaders: [
+          { test: /\.css$/, loader: 'style-loader!css-loader' },
+          { test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
+          { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
+      ]
+  }
 
 };
