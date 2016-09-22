@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-server":"webpack-dev-server --port=3000 --hot --inline"
   },
   "author": "",
   "license": "ISC",
@@ -13,11 +14,16 @@
     "css-loader": "^0.23.1",
     "exports-loader": "^0.6.3",
     "extract-text-webpack-plugin": "^1.0.1",
+    "html-loader": "^0.4.3",
     "json5": "^0.5.0",
     "node-sass": "^3.8.0",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "devDependencies": {
     "webpack": "^1.13.2"
   }
 }

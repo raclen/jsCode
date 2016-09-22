@@ -1,4 +1,4 @@
-/*! This file is created by 2016-08-24 20:08:58 */
+/*! This file is created by 2016-09-22 10:54:06 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	var parentJsonpFunction = window["webpackJsonp"];
@@ -77,7 +77,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + "../dist/js/" + ({"0":"app","1":"main"}[chunkId]||chunkId) + ".min.js";
+/******/ 			script.src = __webpack_require__.p + "dist/js/" + ({"0":"app","1":"main","2":"lazy"}[chunkId]||chunkId) + ".chunk.js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};

@@ -5,7 +5,7 @@
 var jquery = require('./jquery-latest.js')
 module.exports = {
     get:function(){
-        return '按需加载成功'
+        return '按需加载成功...'
     }
 
 }

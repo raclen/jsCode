@@ -1,3 +1,13 @@
 .test{
     color:red;
 }
+#test_tpl{
+    background: url(../img/0825111.png) center top no-repeat ;
+}
+i{
+    background: url("../img/defult_mark.png");
+    width:30px;
+    height: 37px;
+    display: block;
+
+}   
