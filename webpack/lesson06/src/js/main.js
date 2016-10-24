@@ -7,6 +7,8 @@ var app = require('./app.js');
 require('../css/style.scss');
 require('../css/main.css');
 var Zepto = require('./zepto.js');
+var base = require('./base.js');
+base.name = '八戒';
 console.log(Zepto.trim);
 console.log(app.get());
 console.log(jquery.ajax);
