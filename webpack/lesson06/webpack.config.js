@@ -16,7 +16,7 @@ module.exports = {
     entry: {
         // main: ["./src/js/zepto.js", './src/js/main.js'],
         main: "./src/js/main.js",
-        app: "./src/js/app.js",
+        // app: "./src/js/app.js",
     },
     output: {
         path:'./',
@@ -31,18 +31,19 @@ module.exports = {
         new webpack.BannerPlugin('This file is created by '+ new Date().toLocaleString())//设置文件头
     ],
     module: {
-      //加载器配置
-      loaders: [
-          { test: /\.css$/,exclude: /^node_modules$/, loader:ExtractTextPlugin.extract('style-loader','css-loader') },
-          { test: /\.scss$/, exclude: /^node_modules$/,loader: ExtractTextPlugin.extract('style',["css", "sass"])},
-          { test: /\.(png|jpg)$/, exclude: /^node_modules$/,loader: 'url-loader?limit=8192&name=/dist/img/[name][hash:6].[ext]'},
-          { test: require.resolve('./src/js/zepto.js'),exclude: /^node_modules$/, loader: "exports?Zepto" },
-          { test: /\.html/,exclude: /^node_modules$/,loader: "html-loader"}
-      ]
-  },
-  resolve: {
-       root: 'D:/raclen/jsCode/webpack/lesson06/', //绝对路径
-       extensions: ['', '.js', '.json', '.scss']
-   }
+        //加载器配置
+        loaders: [
+            { test: /\.css$/,exclude: /^node_modules$/, loader:ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader') },
+            { test: /\.scss$/, exclude: /^node_modules$/,loader: ExtractTextPlugin.extract(["css", "autoprefixer","sass"])},
+            { test: /\.(png|jpg)$/, exclude: /^node_modules$/,loader: 'url-loader?limit=8192&name=/dist/img/[name][hash:6].[ext]'},
+            { test: require.resolve('./src/js/zepto.js'),exclude: /^node_modules$/, loader: "exports?Zepto" },
+            { test: /\.html/,exclude: /^node_modules$/,loader: "html-loader"}
+        ]
+
+    },
+    resolve: {
+        // root: 'D:/raclen/jsCode/webpack/lesson06/', //绝对路径
+        extensions: ['', '.js', '.json', '.scss']
+    }
 
 };

@@ -1,4 +1,4 @@
-/*! This file is created by 2016-09-22 10:54:06 */
+/*! This file is created by 2016-10-31 16:29:38 */
 @charset "UTF-8";
 body {
   background-color: #fff;
@@ -27,8 +27,6 @@ button.submit {
   color: #6E7173;
   text-decoration: none;
   -webkit-transition: all .1s ease-in;
-  -moz-transition: all .1s ease-in;
-  -o-transition: all .1s ease-in;
   transition: all .1s ease-in; }
 
 a:hover,
@@ -92,7 +90,8 @@ a:focus {
       display: block;
       font-weight: bolder;
       -webkit-box-flex: 1;
-      flex: 1; }
+      -ms-flex: 1;
+          flex: 1; }
       #sidebar .widget .widget-title :before {
         font-weight: initial; }
       #sidebar .widget .widget-title a {
@@ -121,7 +120,7 @@ a:focus {
         line-height: 1.5; }
     #sidebar .widget .item {
       display: -webkit-box;
-      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex; }
     #sidebar .widget .block {
       border: 2px solid #438EDA; }
@@ -137,8 +136,6 @@ a:focus {
       line-height: 1.5;
       border: 1px solid #ddd;
       width: 100%;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
       box-sizing: border-box;
       outline: none; }
 
@@ -234,7 +231,8 @@ a:focus {
   padding: 20px;
   border: 1px solid #438EDA;
   margin-bottom: 10px;
-  transform: skew(-20deg); }
+  -webkit-transform: skew(-20deg);
+          transform: skew(-20deg); }
 
 .page-navigator {
   border-top: 1px solid #438EDA;
@@ -358,8 +356,8 @@ pre {
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
   font-weight: 400;
   -moz-tab-size: 4;
-  tab-size: 4;
-  -moz-hyphens: none;
+  -o-tab-size: 4;
+     tab-size: 4;
   -webkit-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
@@ -461,30 +459,21 @@ pre {
   margin-bottom: 1.5em;
   background-position: left bottom;
   background-repeat: repeat-x;
-  -webkit-background-size: 5px auto;
-  -moz-background-size: 5px auto;
   background-size: 5px auto; }
 
 .author-logo {
   width: 148px;
   height: 148px;
   margin: 0 auto;
-  -webkit-background-size: 6.875em 6.875em;
-  -moz-background-size: 6.875em 6.875em;
   background-size: 148px 148px;
-  -webkit-border-radius: 3.4375em;
   border-radius: 100px;
   -webkit-transition: -webkit-transform 2s ease-out;
-  -moz-transition: -moz-transform 2s ease-out;
-  -o-transition: -o-transform 2s ease-out;
-  -ms-transition: -ms-transform 2s ease-out;
-  transition: transform 2s ease-out; }
+  transition: -webkit-transform 2s ease-out;
+  transition: transform 2s ease-out;
+  transition: transform 2s ease-out, -webkit-transform 2s ease-out; }
 
 .author-logo:hover {
   -webkit-transform: rotateZ(360deg);
-  -moz-transform: rotateZ(360deg);
-  -o-transform: rotateZ(360deg);
-  -ms-transform: rotateZ(360deg);
   transform: rotateZ(360deg); }
 
 @media only screen and (min-width: 1024px) {
@@ -571,14 +560,11 @@ pre {
 
 .P800 {
   -webkit-perspective: 800px;
-  -moz-perspective: 800px;
   -ms-perspective: 800px;
   perspective: 800px; }
 
 .T3D {
   -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
   transform-style: preserve-3d; }
 
 #fold_box {
@@ -600,10 +586,7 @@ pre {
   position: relative;
   z-index: 2;
   font-family: arial;
-  -ms-transform: translateZ(1px);
-  -moz-transform: translateZ(1px);
   -webkit-transform: translateZ(1px);
-  -o-transform: translateZ(1px);
   transform: translateZ(1px); }
 
 #fold_list {
@@ -614,7 +597,8 @@ pre {
 .fold_pager {
   width: 146px;
   height: 30px;
-  transform-origin: center top; }
+  -webkit-transform-origin: center top;
+          transform-origin: center top; }
 
 #fold_list a {
   display: inline-block;
@@ -629,10 +613,7 @@ pre {
   text-decoration: none;
   z-index: 3;
   font-family: arial;
-  -ms-transition: 0.6s;
-  -moz-transition: 0.6s;
   -webkit-transition: 0.6s;
-  -o-transition: 0.6s;
   transition: 0.6s; }
 
 #fold_list a:hover {
@@ -651,22 +632,6 @@ pre {
   left: 0; }
 
 @-webkit-keyframes searchLights {
-  0% {
-    left: -100px;
-    top: 0; }
-  to {
-    left: 120px;
-    top: 100px; } }
-
-@-o-keyframes searchLights {
-  0% {
-    left: -100px;
-    top: 0; }
-  to {
-    left: 120px;
-    top: 100px; } }
-
-@-moz-keyframes searchLights {
   0% {
     left: -100px;
     top: 0; }
@@ -695,10 +660,7 @@ pre {
   border-left-color: #e90f92;
   border-radius: 10px;
   -webkit-animation: pace-spinner 400ms linear infinite;
-  -moz-animation: pace-spinner 400ms linear infinite;
-  -ms-animation: pace-spinner 400ms linear infinite;
-  -o-animation: pace-spinner 400ms linear infinite;
-  animation: pace-spinner 400ms linear infinite; }
+          animation: pace-spinner 400ms linear infinite; }
 
 @-webkit-keyframes pace-spinner {
   0% {
@@ -708,36 +670,14 @@ pre {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg); } }
 
-@-moz-keyframes pace-spinner {
-  0% {
-    -moz-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -moz-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-
-@-o-keyframes pace-spinner {
-  0% {
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-
-@-ms-keyframes pace-spinner {
-  0% {
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-
 @keyframes pace-spinner {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
     transform: rotate(0deg); }
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
     transform: rotate(360deg); } }
 
 .expire-tips {
@@ -760,6 +700,9 @@ code, kbd, pre, samp {
   font-family: Consolas; }
 .test{
     color:red;
+    font-size: 24px;
+    -webkit-transform:translateX(10px);
+            transform:translateX(10px);
 }
 #test_tpl{
     background: url(/dist/img/08251116336be.png) center top no-repeat;
@@ -770,4 +713,4 @@ i{
     height: 37px;
     display: block;
 
-}   
+}

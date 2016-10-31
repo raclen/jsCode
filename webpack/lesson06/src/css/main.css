@@ -1,5 +1,7 @@
 .test{
     color:red;
+    font-size: 24px;
+    transform:translateX(10px);
 }
 #test_tpl{
     background: url(../img/0825111.png) center top no-repeat ;
@@ -10,4 +12,4 @@ i{
     height: 37px;
     display: block;
 
-}   
+}

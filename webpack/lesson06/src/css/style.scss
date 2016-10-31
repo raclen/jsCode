@@ -865,10 +865,10 @@ pre {
     border-top-color: #e90f92;
     border-left-color: #e90f92;
     border-radius: 10px;
-    -webkit-animation: pace-spinner 400ms linear infinite;
-    -moz-animation: pace-spinner 400ms linear infinite;
-    -ms-animation: pace-spinner 400ms linear infinite;
-    -o-animation: pace-spinner 400ms linear infinite;
+    //-webkit-animation: pace-spinner 400ms linear infinite;
+    //-moz-animation: pace-spinner 400ms linear infinite;
+    //-ms-animation: pace-spinner 400ms linear infinite;
+    //-o-animation: pace-spinner 400ms linear infinite;
     animation: pace-spinner 400ms linear infinite;
 }
 @-webkit-keyframes pace-spinner {
