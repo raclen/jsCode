@@ -9,7 +9,7 @@
 //因此使用exports-loader更符合webpack的加载思想
 
 var webpack = require('webpack');
-var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('dist/js/common.js');
+var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('/js/common.js');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -19,15 +19,15 @@ module.exports = {
         // app: "./src/js/app.js",
     },
     output: {
-        path:'./',
+        path:'./dist',
         // filename: "./dist/js/[name]_[hash:6].js"
-        filename: "dist/js/[name].min.js",
+        filename: "/js/[name].min.js",
         publicPath: "",
-        chunkFilename: "dist/js/[name].chunk.js"//延迟加载的模块名字
+        chunkFilename: "/js/[name].chunk.js"//延迟加载的模块名字
     },
     plugins: [
         commonsPlugin,
-        new ExtractTextPlugin('dist/css/[name].min.css'),//把css作为单独文件导出
+        new ExtractTextPlugin('/css/[name].min.css'),//把css作为单独文件导出
         new webpack.BannerPlugin('This file is created by '+ new Date().toLocaleString())//设置文件头
     ],
     module: {
@@ -35,7 +35,7 @@ module.exports = {
         loaders: [
             { test: /\.css$/,exclude: /^node_modules$/, loader:ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader') },
             { test: /\.scss$/, exclude: /^node_modules$/,loader: ExtractTextPlugin.extract(["css", "autoprefixer","sass"])},
-            { test: /\.(png|jpg)$/, exclude: /^node_modules$/,loader: 'url-loader?limit=8192&name=/dist/img/[name][hash:6].[ext]'},
+            { test: /\.(png|jpg)$/, exclude: /^node_modules$/,loader: 'url-loader?limit=8192&name=../img/[name][hash:6].[ext]'},
             { test: require.resolve('./src/js/zepto.js'),exclude: /^node_modules$/, loader: "exports?Zepto" },
             { test: /\.html/,exclude: /^node_modules$/,loader: "html-loader"}
         ]
