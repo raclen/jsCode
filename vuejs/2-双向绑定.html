@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>双向绑定</title>
+</head>
+<body>
+<div id="box">
+    {{message}}<br/>
+    <!--指令里面的变量不需要加{{ }}-->
+    <input type="text" v-model="message" />
+</div>
+
+<script src="src/vue.js"></script>
+<script>
+    //要使用vue一定要有一个vue构造函数
+    new Vue({
+        el:'#box',
+        data:{
+            message:''
+        }
+    })
+</script>
+</body>
+</html>
+<!--双向绑定是通过v-model，也就是把用户输入的数据和作用域的数据进行整合，行程一个统一体，react没见过这个-->

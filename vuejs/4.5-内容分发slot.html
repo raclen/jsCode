@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <h1 class="dialog-title" slot="header">提示信息</h1>
+</div>
+
+<script src="src/vue.js"></script>
+<script>
+    Vue.component('slot-component', {
+        template: [
+            '<div class="dialog">',
+            '    <slot name="header"></slot>',
+            '</div>'
+        ].join("")
+    })
+    var app = new Vue({
+        el: '#box'
+    });
+    // slot的作用就是把父级的一块内容插入到子组件，
+    // 我觉得这种情况不太多，作为一个组件应该有共同点，
+    // 我们可能替换的只是“提示信息”这几个字，而不是大块的html标签替换
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>自定义事件</title>
+</head>
+<body>
+<div id="app">
+    {{message}}
+    <child-component v-on:addmessage="addMessageFn"></child-component>
+</div>
+<script src="src/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            message: []
+        },
+        methods: {
+            addMessageFn: function (msg) {
+                this.message.push(msg);
+
+            }
+        },
+        components: {
+            'child-component': {
+                data: function () {
+                    return {
+                        message: ''
+                    }
+                },
+                template: '<div><input type="text" v-model="message"/><input type="button" value="add" @click="addMsg()"/></div>',
+                methods: {
+                    addMsg: function () {
+                        this.$emit('addmessage', this.message)
+                        this.message = ''
+                    }
+                }
+            }
+        }
+    })
+    //自定义事件主要是通过v-on和$emit来实现
+    //this.$emit('addmessage', this.message)，这句话中addmessage不能写成addMessage
+</script>
+</body>
+</html>

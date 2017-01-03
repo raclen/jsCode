@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>常用指令</title>
+</head>
+<body>
+<div id="app">
+    <p v-if="yes">Yes!</p>
+    <p v-if="no">No!</p>
+    <p v-if="age <= 26">我的年龄小于等于26</p>
+    <p v-else>我的年龄大于26</p>
+    <p v-if="name.indexOf('keep')>-1">我的名字中有KEEP</p>
+    年龄：<input type="text" v-model="age" />
+    <ul>
+        <li v-for="el in people">
+            {{el.name}}&nbsp;
+            {{el.age}}&nbsp;
+            {{el.sex}}&nbsp;
+        </li>
+    </ul>
+    v-for也可以用来遍历一个数字
+    <ul>
+        <li v-for="n in number">{{n}} </li>
+    </ul>
+    v-on指令语法真难看[v-on:click]为什么不是[v-onlick]<br/>
+    事件可以简写[v-on:click]=>[@click]<br/>
+    <input type="button" v-on:click="sayName()" value="sayName">
+    <input type="button" @click="sayAge(age)" value="sayAge">
+    <p v-bind:name="name"></p>
+
+
+</div>
+<script src="src/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            yes: true,
+            no: false,
+            age: 25,
+            number:10,
+            name: 'keepfool',
+            people: [{
+                name: 'Jack',
+                age: 30,
+                sex: 'Male'
+            }, {
+                name: 'Bill',
+                age: 26,
+                sex: 'Male'
+            }, {
+                name: 'Tracy',
+                age: 22,
+                sex: 'Female'
+            }, {
+                name: 'Chris',
+                age: 36,
+                sex: 'Male'
+            }]
+        },
+        methods:{
+            sayName:function(){
+                alert(this.name);
+            },
+            sayAge:function(age){
+                alert(age);
+            }
+        }
+    })
+//    总体来说v-if中可以是一个表达式，返回的一个boolean
+//    其中v-show和v-if类似，在需要频繁显示隐藏的时候使用v-show
+//    在v-show和v-if后面可以跟一个v-else
+//    v-for和ng-repeat 用法类似，遍历一个对象
+//    v-bind 用来绑定一个属性,同样可以是一段表达式
+//    对于函数没有参数可与省略()，为保持良好习惯，不管有没有参数都加括号
+//    =================================================
+//    下面来看一下下vue的几个核心参数
+//    el =>声明一块vue的作用域，标识里面的东西可以使用vue，和angular的ng-app类似
+//    data =>数据源和react和state类似
+//    methods =>方法，这个没什么说的
+
+</script>
+</body>
+</html>
+

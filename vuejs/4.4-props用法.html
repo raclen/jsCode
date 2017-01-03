@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>组件</title>
+</head>
+<body>
+<div id="box">
+
+    box by {{name}},{{age}} years old
+
+    <br/>
+    <br/>
+    <my-component :name="name" :setname="setname"></my-component>
+
+</div>
+
+<script src="src/vue.js"></script>
+<script>
+
+    //要使用vue一定要有一个vue构造函数
+    //#box意思就是这块区域交给vue来处理
+    new Vue({
+        el:'#box',
+        data:{
+            name:'liming',
+            age:28
+
+        },
+        methods:{
+            setname:function(){
+                alert(1);
+            }
+        },
+        components:{
+            'my-component':{
+                template: '<div>' +
+                'This is my first component by {{name}},{{age}} years old<br/>' +
+                '<input value="setName" type="button" @click="setname()">'+
+                '</div>',
+                props:['name','setname']
+            }
+
+        }
+
+    })
+   //和react类似可以通过props 绑定函数来回调，这样就可以子组件就可以和父组件通讯
+</script>
+</body>
+</html>

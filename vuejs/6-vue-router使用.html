@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>Vue-router的使用</title>
+</head>
+<body>
+<div id="app">
+    <div class="list-group">
+        <router-link to="/home">Home</router-link>
+        <router-link to="/item/12354">item</router-link>
+        <router-link to="/about">About</router-link>
+    </div>
+    <div class="container">
+        <!--用于渲染匹配的组件-->
+        <router-view></router-view>
+    </div>
+
+</div>
+<script src="src/vue.js"></script>
+<script src="src/vue-router.js"></script>
+<script>
+    //声明组件Home
+    var Home = Vue.extend({
+        template: '<p>{{message}}</p>',
+        data: function () {
+            return {
+                message: '欢迎来到首页'
+            }
+        }
+    })
+
+    //声明组件About
+    var About = Vue.extend({
+        template: '<p>欢迎来到About页面</p>'
+    })
+    var Item = Vue.extend({
+        template:'<p>欢迎来到item页面，当前页面参数 id={{ $route.params.id }}</p>'
+    })
+
+
+    //实例化一个路由对象
+    var router = new VueRouter({
+        routes: [
+            {path: '/home', component: Home},
+            {path: '/item/:id', component: Item},
+            {path: '/about', component: About},
+            {path: '/', redirect: '/home'}
+        ]
+    });
+
+//    初始化容器
+//    var app = new Vue({ router }).$mount('#app');
+    var app = new Vue({ router ,el:'#app'});
+
+    //以上针对vue2.X以及vue-router v2.1.1，新版本改动还是比较大，不向下兼容
+    //上面两段代码都可以初始化容器
+</script>
+</body>
+</html>

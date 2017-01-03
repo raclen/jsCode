@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>vue-resource使用</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="datePriceinfo in datePriceList">
+            日期：{{datePriceinfo.date}}
+            价格：{{datePriceinfo.price}}
+            库存：{{datePriceinfo.stock}}
+        </li>
+    </ul>
+</div>
+<!--<script src="https://cdn.jsdelivr.net/vue.resource/1.0.3/vue-resource.min.js"></script>-->
+<script src="src/vue.js"></script>
+<script src="src/vue-resource.min.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            datePriceList:[]
+        },
+        methods:{
+            ready: function() {
+                this.getDatePriceInfo();
+            },
+            getDatePriceInfo:function(){
+                this.$http.get('data/getDatePriceInfo.json')
+                        .then(function(res){
+                            this.datePriceList = res.data.data;
+
+                        })
+                        .catch(function(res) {
+                            console.log(res)
+                        })
+            }
+        }
+    })
+    vm.ready();
+    //这里我们又学到一个新知识，ready函数，可想而知如同jquery的一样
+    //vue2.0 ready函数被删除了,这里手动调用一下ready函数
+    //res这块比较特别，可以打印出来看看，就知道怎么取值了。res.data就是接口返回的数据
+    //我这里用webstorm本地开启一个服务，可以请求这个json
+
+
+</script>
+</body>
+</html>

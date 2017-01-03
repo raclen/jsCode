@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>父子组件通讯</title>
+</head>
+<body>
+<div id="box">
+    <child-component_01 ref="cc1"></child-component_01>
+    <child-component_02></child-component_02>
+    <input type="button" @click="showChildMsg()" value="showChildMsg">
+</div>
+<script src="src/vue.js"></script>
+<!--<script src="https://keepfool.github.io/vue-tutorials/02.Components/Part-1/js/vue.js"></script>-->
+<script>
+    var vm = new Vue({
+        el: '#box',
+        data:{
+            message:'this parents'
+        },
+        components: {
+            'child-component_01': {
+                template: '<div>this component is first<input @click="showParentMsg()" value="showParentMsg" type="button"></div>',
+                data: function () {
+                    return {
+                        message: 'first component'
+                    }
+                },
+                methods:{
+                    showParentMsg:function(){
+                        alert(this.$parent.message)
+                    }
+                }
+            },
+            'child-component_02': {
+                template: '<h1>this component is second</h1>',
+                data: function () {
+                    return {
+                        message: 'second component'
+                    }
+                }
+            }
+        },
+        methods:{
+            showChildMsg:function(){
+                console.log(this.$children)
+                alert(this.$refs.cc1.message);
+            }
+        }
+    })
+//通过ref可以给组件取名字,类似于react的ref
+</script>
+</body>
+</html>
