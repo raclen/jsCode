@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>axios的使用</title>
+</head>
+<body>
+<div id="app">
+
+
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    axios.get('/user?ID=12345')
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+   // 不要用快捷方法，一些简写的方式很奇葩，和ajax一样用配置的方法最好
+    // 参考文档 https://www.kancloud.cn/yunye/axios/234845
+
+</script>
+</body>
+</html>

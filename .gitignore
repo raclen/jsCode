@@ -1,3 +1,5 @@
 .idea
 node_modules
 /webpack/lesson05/node_modules
+node_modules/
+dist
