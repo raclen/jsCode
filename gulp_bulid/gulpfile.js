@@ -18,6 +18,7 @@ var imagemin = require('gulp-imagemin'),
     minifyCss = require('gulp-minify-css'),
     sourcemaps = require('gulp-sourcemaps'),
     concat = require('gulp-concat'),
+    sass1 = require('gulp-sass'),
     notify = require('gulp-notify'); //提示信息
 /**
  * 一般事件的定义放在事件调用的上面，这里我们也把'任务'写到前面
@@ -99,11 +100,24 @@ gulp.task('buildcss2', function() {
  *我们只需要把要执行执行的函数都放在这个函数（或者事件，就像jquery的ready）里面
  *
  */
-gulp.task('default', function() {
-    console.log('common in default');
-    gulp.run('img');
-    //gulp.run('pxtworem');
 
-})
+gulp.task('sass', function() {
+    return gulp.src('./src/sass/*.scss')
+        .pipe(sass1())
+        // .pipe(minifyCss())
+        .pipe(gulp.dest('./dest/css'))
+        .pipe(notify({
+            message: 'sass task ok'
+        }));
+});
+gulp.task('sass:watch', function () {
+    gulp.watch('./src/sass/*.scss', ['sass']);
+});
+// gulp.task('default', function() {
+//     console.log('common in default');
+//     gulp.run('img');
+//     //gulp.run('pxtworem');
+//
+// })
 console.log('end ...'); //
 

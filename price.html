@@ -25,6 +25,86 @@
             return sa;
         }
 
+        //logo
+        var canvas = document.querySelector('#canvas');
+        var ctx = canvas.getContext('2d');
+        var img = new Image();
+        img.onload = function () {
+            fnDrawImg(this)
+        }
+        img.src = '/template/img/enso.svg';
+        var iScale = 1,
+                step = 1,
+                dx = 0,
+                dy = 0,
+                num = 0,
+                numx = 60,
+                numy = 40;
+
+        function fnDrawImg(obj) {
+            num++;
+            ctx.save();
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (iScale == 0) {
+                step = 1;
+            }
+            if (iScale == 62) {
+                step = -1;
+            }
+            iScale = iScale + step;
+            ctx.translate(62, 62);
+            ctx.scale(iScale * 1 / 62, iScale * 1 / 62);
+            ctx.rotate(num * Math.PI / 180);
+            ctx.translate(-62, -62);
+            ctx.drawImage(obj, 0, 0, 124, 124);
+            ctx.restore();
+            if (num > 700) {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                clearInterval(timerfnDrawImg);
+                var hitCanvas = document.createElement('canvas');
+                document.body.appendChild(hitCanvas);
+                hitCanvas.id = 'hitcanvas';
+                hitCanvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.offsetWidth;
+                hitCanvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.offsetHeight;
+                timerHitDraw = setInterval(function () {
+                    hitDrow(img, hitCanvas)
+                }, 20)
+
+                hitCanvas.onmousedown = function () {
+                    clearInterval(timerHitDraw);
+                    num = 0;
+                    document.body.removeChild(hitcanvas);
+                    timerfnDrawImg = setInterval(function () {
+                        fnDrawImg(obj)
+                    }, 20)
+
+                }
+            }
+
+
+        }
+
+        function hitDrow(obj, hitCanvas) {
+            var ctx = hitCanvas.getContext('2d')
+            ctx.clearRect(0, 0, hitCanvas.width, hitCanvas.height);
+            ctx.beginPath()
+            ctx.drawImage(obj, dx, dy, 124, 124);
+            ctx.fill();
+            if (dy + 62 + numx > hitCanvas.height || dy + 62 + numx < 0) {
+                numx = -numx;
+            }
+            if (dx + 62 + numy > hitCanvas.width || dx + 62 + numy < 0) {
+                numy = -numy;
+            }
+            dy = dy + numx;
+            dx = dx + numy;
+
+        }
+        timerfnDrawImg = setInterval(function () {
+            fnDrawImg(img)
+        }, 20)
+
+
     </script>
 </head>
 <style>
