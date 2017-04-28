@@ -9,9 +9,9 @@
 <body>
 <div id="app">
     <ul v-for="menuItem in theModel">
-        <my-tree :model="menuItem">
+        <tree-component :model="menuItem">
 
-        </my-tree>
+        </tree-component>
     </ul>
 </div>
 <template id="tree-component">
@@ -27,13 +27,13 @@
 <script>
 
     //创建一个组件
-    var myTree = Vue.extend({
+    var treeComponent = Vue.extend({
         template: '#tree-component',
         name: 'treeComponent',
         props: ['model']
     })
     //注册组件
-    Vue.component('my-tree', myTree)
+    Vue.component('tree-component', treeComponent)
     var myData = [
         {
             'id': '1',

@@ -9,6 +9,7 @@
 <body>
 <div id="box">
     <my-component></my-component>
+    <my-component2></my-component2>
 </div>
 
 <script src="src/vue.js"></script>
@@ -19,6 +20,13 @@
     })
     //注册组件
     Vue.component('my-component', myComponent)
+
+    //创建一个组件
+    var myComponent2 = Vue.extend({
+        template: '<div>This is my first component222222222!</div>'
+    })
+    //注册组件
+    Vue.component('my-component2', myComponent2)
 
 
     //要使用vue一定要有一个vue构造函数

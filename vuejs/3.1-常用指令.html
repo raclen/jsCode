@@ -10,7 +10,7 @@
 <div id="app">
     <p v-if="yes">Yes!</p>
     <p v-if="no">No!</p>
-    <p v-if="age <= 26">我的年龄小于等于26</p>
+    <p v-if="age <= 26&&age>14">我的年龄小于等于26</p>
     <p v-else>我的年龄大于26</p>
     <p v-if="name.indexOf('keep')>-1">我的名字中有KEEP</p>
     年龄：<input type="text" v-model="age" />
@@ -30,6 +30,11 @@
     <input type="button" v-on:click="sayName()" value="sayName">
     <input type="button" @click="sayAge(age)" value="sayAge">
     <p v-bind:name="name"></p>
+    <div v-for="(item,index) in items">
+        <input type="checkbox" v-model="item.checked">{{item.text}}
+        <button @click="addItem(items)">addItem</button>
+        {{index}}====={{items.length }}-----
+    </div>
 
 
 </div>
@@ -59,7 +64,22 @@
                 name: 'Chris',
                 age: 36,
                 sex: 'Male'
-            }]
+            }],
+            items:[
+                {
+                    checked:false,
+                    text:'111'
+                },
+                {
+                    checked:false,
+                    text:'222'
+                },
+                {
+                    checked:false,
+                    text:'333'
+                }
+            ]
+
         },
         methods:{
             sayName:function(){
@@ -67,6 +87,13 @@
             },
             sayAge:function(age){
                 alert(age);
+            },
+            addItem:function(res){
+                res.push({
+                    checked:false,
+                    text:'444'
+                })
+
             }
         }
     })

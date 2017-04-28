@@ -15,6 +15,11 @@
     <br/>
     <my-component :name="name" :setname="setname"></my-component>
 
+    <ul>
+        <li>ssss</li>
+        <li>ssss</li>
+        <li>ssss</li>
+    </ul>
 </div>
 
 <script src="src/vue.js"></script>
@@ -37,13 +42,23 @@
         components:{
             'my-component':{
                 template: '<div>' +
-                'This is my first component by {{name}},{{age}} years old<br/>' +
+                'This is my first component by {{name}}{{setname}}years old<br/>' +
                 '<input value="setName" type="button" @click="setname()">'+
                 '</div>',
-                props:['name','setname']
+                props:['name','setname'],
+                methods:{
+
+                },
+                mounted: function () {
+                    //初始化组件
+                    alert("common in component");
+                    alert(this.name);
+
+                }
             }
 
         }
+
 
     })
    //和react类似可以通过props 绑定函数来回调，这样就可以子组件就可以和父组件通讯
