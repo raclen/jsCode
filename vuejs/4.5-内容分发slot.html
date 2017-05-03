@@ -7,25 +7,47 @@
     <title>Title</title>
 </head>
 <body>
-<div id="box">
-    <h1 class="dialog-title" slot="header">提示信息</h1>
+<div id="app">
+    <my-component>
+        <h1 slot="header">显示slot中name=header的内容</h1>
+        <h1 slot="pc">显示slot中name=pc的内容</h1>
+        <h1 slot="input"><input type="text"></h1>
+    </my-component>
+    <my-component2>
+        <input type="checkbox">checkbox
+    </my-component2>
 </div>
+<template id="myComponent">
+    <div class="content">
+        <h2>This is a component!</h2>
+        <slot name="header"></slot>
+        <slot name="pc"></slot>
+        <slot name="input"></slot>
+        <p>Say something...</p>
+    </div>
+</template>
+<template id="myComponent2">
+    <div class="content">
+        <h2>This is a component2!</h2>
+        <slot></slot>
+        <p>Say something...</p>
+    </div>
+</template>
 
 <script src="src/vue.js"></script>
 <script>
-    Vue.component('slot-component', {
-        template: [
-            '<div class="dialog">',
-            '    <slot name="header"></slot>',
-            '</div>'
-        ].join("")
+    Vue.component('my-component', {
+        template: '#myComponent'
     })
-    var app = new Vue({
-        el: '#box'
-    });
-    // slot的作用就是把父级的一块内容插入到子组件，
-    // 我觉得这种情况不太多，作为一个组件应该有共同点，
-    // 我们可能替换的只是“提示信息”这几个字，而不是大块的html标签替换
+    Vue.component('my-component2', {
+        template: '#myComponent2'
+    })
+
+    new Vue({
+        el: '#app'
+    })
+    // slot的作用就是让组件里面可以写东西 然后传给组件，如果有多个就可以用name  一个就直接传递过去
 </script>
 </body>
 </html>
+

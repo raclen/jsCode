@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>watch的用法</title>
+</head>
+<body>
+<h1 id="box">
+    {{ message }}<br/>
+
+    <input type="text" v-model="message"><br/>
+
+    <input type="text" v-model="item.a">
+</h1>
+
+<script src="src/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#box',
+        data: {
+            message: 'hello world',
+            item: {
+                a: "1111"
+            }
+        },
+        watch: {
+            message: function () {
+                console.log("message的值有变动");
+            }
+        }
+    });
+
+    vm.$watch('item',
+            function (val, oldVal) {
+                console.log("item的值有变动");
+
+            }, {
+                deep: true
+            })
+</script>
+</body>
+</html>
