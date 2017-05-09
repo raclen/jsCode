@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta charset="utf-8">
+    <title>递归组件</title>
+    <style>
+
+        span.menu-name {
+            position: relative;
+
+        }
+
+        .newnode {
+            position: absolute;
+            width: 80px;
+            border: 1px solid #999;
+            background: #fff;
+            z-index: 2;
+            padding: 0;
+            overflow: hidden;
+            left: 20px;
+        }
+
+        .newnode li {
+            list-style: none;
+            padding: 4px 10px;
+            border-bottom: 1px #ccc solid;
+            cursor: pointer;
+        }
+        .newnode li:hover{
+            background: #009DD9;
+            color: #fff;
+        }
+
+        #app {
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+<div id="app" @click="appClick($event)">
+    <ul v-for="menuItem in theModel">
+        <tree-component :model="menuItem" ref="cc1">
+
+        </tree-component>
+    </ul>
+
+</div>
+<template id="tree-component">
+    <li>
+        <span @click="toggle" @contextmenu.prevent="addNode" class="menu-name">
+              <i v-if="isFolder" class="icon" :class="[open ? 'folder-open': 'folder']">+</i>
+              <i v-if="!isFolder" class="icon file-text"></i>
+              {{ model.menuName }}
+            <ul v-show="rightClick" class="newnode" @click.stop>
+                <li>置顶</li>
+                <li>上移</li>
+                <li>下移</li>
+                <li>删除</li>
+            </ul>
+        </span>
+
+        <ul v-show="open" v-if="isFolder">
+            <tree-component v-for="item in model.children" :model="item"></tree-component>
+        </ul>
+    </li>
+
+</template>
+<script src="src/vue.js"></script>
+<script>
+
+    //创建一个组件
+    var treeComponent = Vue.extend({
+        template: '#tree-component',
+        name: 'treeComponent',
+        props: ['model'],
+        data: function () {
+            return {
+                open: false,
+                rightClick: false,
+                isFolder: true
+            }
+        },
+        computed: {
+            isFolder: function () {
+                return this.model.children && this.model.children.length
+            }
+        },
+        methods: {
+            toggle: function () {
+//                console.log(this);
+                if (this.isFolder) {
+                    this.open = !this.open
+                }
+
+            },
+            addNode: function () {
+                console.log('点击右键了')
+                console.log(this.model.menuName)
+                this.rightClick = !this.rightClick
+
+            }
+        }
+    })
+    //注册组件
+    //    Vue.component('tree-component', treeComponent)
+    var myData = [
+        {
+            'id': '1',
+            'menuName': '基础管理',
+            'menuCode': '10',
+            'children': [
+                {
+                    'menuName': '用户管理',
+                    'menuCode': '11'
+                },
+                {
+                    'menuName': '角色管理',
+                    'menuCode': '12',
+                    'children': [
+                        {
+                            'menuName': '管理员',
+                            'menuCode': '121',
+                            'children': [
+                                {
+                                    'menuName': '管理员2',
+                                    'menuCode': '1211',
+                                    'children': [
+                                        {
+                                            'menuName': '管理员3',
+                                            'menuCode': '12111',
+                                            'children': []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            'menuName': 'CEO',
+                            'menuCode': '122'
+                        },
+                        {
+                            'menuName': 'CFO',
+                            'menuCode': '123'
+                        },
+                        {
+                            'menuName': 'COO',
+                            'menuCode': '124'
+                        },
+                        {
+                            'menuName': '普通人',
+                            'menuCode': '124'
+                        }
+                    ]
+                },
+                {
+                    'menuName': '权限管理',
+                    'menuCode': '13'
+                }
+            ]
+        },
+        {
+            'id': '2',
+            'menuName': '商品管理',
+            'menuCode': ''
+        },
+        {
+            'id': '3',
+            'menuName': '订单管理',
+            'menuCode': '30',
+            'children': [
+                {
+                    'menuName': '订单列表',
+                    'menuCode': '31'
+                },
+                {
+                    'menuName': '退货列表',
+                    'menuCode': '32',
+                    'children': []
+                }
+            ]
+        },
+        {
+            'id': '4',
+            'menuName': '商家管理',
+            'menuCode': '',
+            'children': []
+        }
+    ];
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            theModel: myData
+        },
+        components: {
+            'tree-component': treeComponent
+        },
+        methods: {
+            appClick: function (e) {
+                console.log(e);
+                var _this = this;
+
+                ;(function closeMenu(ele) {
+                    ele.$children.forEach(function (item, i) {
+                        item.rightClick = false;
+                        if (item.$children && item.$children.length) {
+                            closeMenu(item)
+                        }
+                    })
+                })(_this);
+
+            }
+        }
+    })
+    /*
+     @contextmenu.prevent  右键事件
+     @click.stop  阻止冒泡
+
+     */
+</script>
+</body>
+</html>

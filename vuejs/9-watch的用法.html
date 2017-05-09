@@ -25,6 +25,11 @@
                 a: "1111"
             }
         },
+        filters: {
+            peopleSelect: function (value) {
+                if (!value) return ''
+            }
+        },
         watch: {
             message: function () {
                 console.log("message的值有变动");
