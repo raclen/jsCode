@@ -40,7 +40,7 @@
     </style>
 </head>
 <body>
-<div id="app" @click="appClick($event)">
+<div id="app" @click="appClick($event)"  >
     <ul v-for="menuItem in theModel">
         <tree-component :model="menuItem" ref="cc1">
 
@@ -54,16 +54,17 @@
               <i v-if="isFolder" class="icon" :class="[open ? 'folder-open': 'folder']">+</i>
               <i v-if="!isFolder" class="icon file-text"></i>
               {{ model.menuName }}
-            <ul v-show="rightClick" class="newnode" @click.stop>
-                <li>置顶</li>
-                <li>上移</li>
-                <li>下移</li>
-                <li>删除</li>
+            <ul style="display: none" class="newnode" @click.stop>
+                <li @click="operateRightClickMenu('1',model,parentModel)">置顶</li>
+                <li @click="operateRightClickMenu('2',model,parentModel)">上移</li>
+                <li @click="operateRightClickMenu('3',model,parentModel)">下移</li>
+                <li @click="operateRightClickMenu('4',model,parentModel)">置底</li>
+                <li @click="operateRightClickMenu('5',model,parentModel)">删除</li>
             </ul>
         </span>
 
         <ul v-show="open" v-if="isFolder">
-            <tree-component v-for="item in model.children" :model="item"></tree-component>
+            <tree-component v-for="item in model.children" :model="item" :parent-model="model.children"></tree-component>
         </ul>
     </li>
 
@@ -75,11 +76,10 @@
     var treeComponent = Vue.extend({
         template: '#tree-component',
         name: 'treeComponent',
-        props: ['model'],
+        props: ['model','parent-model'],
         data: function () {
             return {
                 open: false,
-                rightClick: false,
                 isFolder: true
             }
         },
@@ -98,8 +98,80 @@
             },
             addNode: function () {
                 console.log('点击右键了')
-                console.log(this.model.menuName)
-                this.rightClick = !this.rightClick
+                console.log(this.model.menuName);
+                document.querySelectorAll('.newnode').forEach(function(item,i){
+                    item.style.display='none';
+                })
+
+                this.$el.querySelector('.newnode').style.display='block';
+
+            },
+            operateRightClickMenu : function (type,model,parentModel) {
+//                  type :1  置顶
+//                  type：2  上移
+//                  type：3  下移
+//                  type：4  置底
+//                  type：5  删除
+                console.info(model);
+                console.info(parentModel);
+                switch (type){
+                    case '1':
+                        parentModel.forEach(function(item,i){
+                            if(item.menuCode === model.menuCode){
+                                parentModel.splice(i,1);
+                                parentModel.unshift(model);
+                            }
+                        });
+                        break;
+                    case '2':
+                        parentModel.forEach(function(item,i){
+                            if(item.menuCode === model.menuCode){
+                                if(i!==0){
+                                    parentModel.splice(i,1);
+                                    parentModel.splice(i-1,0,model);
+                                }
+
+                            }
+                        });
+                        break;
+                    case '3':
+                        for (var i=0,len=parentModel.length;i<len;i++){
+                            if(parentModel[i].menuCode === model.menuCode){
+                                if(i!==len-1){
+                                    parentModel.splice(i,1);
+                                    parentModel.splice(i+1,0,model);
+                                    break;
+                                }
+
+                            }
+                        }
+                        break;
+                    case '4':
+                        parentModel.forEach(function(item,i){
+                            if(item.menuCode === model.menuCode){
+                                if(i!==parentModel.length-1){
+                                    parentModel.splice(i,1);
+                                    parentModel.push(model);
+                                }
+                            }
+                        });
+                        break;
+                    case '5':
+                        parentModel.forEach(function(item,i){
+                            if(item.menuCode === model.menuCode){
+                                if(i!==parentModel.length-1){
+                                    parentModel.splice(i,1);
+                                }
+
+                            }
+                        });
+                        break;
+                    default:
+                        console.log('type类型未匹配')
+                }
+                document.querySelectorAll('.newnode').forEach(function(item,i){
+                    item.style.display='none';
+                })
 
             }
         }
@@ -150,8 +222,8 @@
                             'menuCode': '124'
                         },
                         {
-                            'menuName': '普通人',
-                            'menuCode': '124'
+                            'menuName': '员工',
+                            'menuCode': '125'
                         }
                     ]
                 },
@@ -202,14 +274,9 @@
                 console.log(e);
                 var _this = this;
 
-                ;(function closeMenu(ele) {
-                    ele.$children.forEach(function (item, i) {
-                        item.rightClick = false;
-                        if (item.$children && item.$children.length) {
-                            closeMenu(item)
-                        }
-                    })
-                })(_this);
+                document.querySelectorAll('.newnode').forEach(function(item,i){
+                    item.style.display='none';
+                })
 
             }
         }
@@ -218,7 +285,7 @@
      @contextmenu.prevent  右键事件
      @click.stop  阻止冒泡
      vue 好像只能父子组件通信  连自定义事件都不行
-
+     对于事件处理 最好用 js的事件，用数据映射 太麻烦 涉及组件通信
      */
 </script>
 </body>
