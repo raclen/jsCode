@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "Name-formatting_ctrip",
+    "version": "1.0.0",
+    "description": "用于名称格式化",
+    "icons": {
+        "128": "assets/icon16.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "16": "assets/icon16.png",
+            "19": "assets/icon16.png",
+            "38": "assets/icon16.png"
+        },
+        "default_title": "Name formatting",
+        "default_popup": "popup.html"
+    },
+    "options_page": "index.html"
+}
+

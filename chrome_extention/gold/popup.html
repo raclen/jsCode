@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<link rel="stylesheet" type="text/css" media="screen" href="assets/css.css">
+</head>
+<body>
+<section>
+    <label>最大价格:</label>
+    <input  type="text" id="max" placeholder="设置为-1取消提醒" require="true" autocomplete="false" tabindex="1">
+    <label>最小价格:</label>
+    <input  type="text" id="min" placeholder="设置为-1取消提醒" tabindex="1"  value="" >
+
+    <button type="button" id="btn">确定</button>
+</section>
+<div id="now_price"></div>
+
+<div id="main" style="width: 600px;height: 300px">
+
+</div>
+
+<script src="echart.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>

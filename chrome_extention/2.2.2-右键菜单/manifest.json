@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "一个右键菜单的例子",
+    "version": "1.0",
+    "description": "查找相关玩乐产品",
+    "permissions": [
+        "contextMenus"//右键菜单的权限
+    ],
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ]
+    },
+    "icons": {
+        "16": "icon16.png"
+    },
+    "content_scripts": [
+        {
+//            "matches": ["*://*/*"],
+            "matches": ["<all_urls>"],
+            "js": ["js/content.js"]
+        }
+    ]
+}

@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="app">
-    <p v-if="yes">Yes!</p>
+    <p v-if="yes">Yes!</p>{{yes}}
     <p v-if="no">No!</p>
     <p v-if="age <= 26&&age>14">我的年龄小于等于26</p>
     <p v-else>我的年龄大于26</p>
@@ -30,10 +30,11 @@
     <input type="button" v-on:click="sayName()" value="sayName">
     <input type="button" @click="sayAge(age)" value="sayAge">
     <p v-bind:name="name"></p>
-    <div v-for="(item,index) in items">
+    <div v-for="(item,index) in obj.items">
         <input type="checkbox" v-model="item.checked">{{item.text}}
-        <button @click="addItem(items)">addItem</button>
-        {{index}}====={{items.length }}-----
+        <input type="text" v-model="item.text">
+        <button @click="addItem(obj.items)">addItem</button>
+        {{index}}====={{obj.items.length }}-----
     </div>
 
 
@@ -65,7 +66,28 @@
                 age: 36,
                 sex: 'Male'
             }],
-            items:[
+            obj:{
+                items:[]
+            }
+
+        },
+        methods:{
+            sayName:function(){
+                this.yes=!this.yes;
+            },
+            sayAge:function(age){
+                alert(age);
+            },
+            addItem:function(res){
+                res.push({
+                    checked:false,
+                    text:'444'
+                })
+
+            }
+        },mounted: function () {
+            this.obj = {
+                items:[
                 {
                     checked:false,
                     text:'111'
@@ -79,21 +101,6 @@
                     text:'333'
                 }
             ]
-
-        },
-        methods:{
-            sayName:function(){
-                alert(this.name);
-            },
-            sayAge:function(age){
-                alert(age);
-            },
-            addItem:function(res){
-                res.push({
-                    checked:false,
-                    text:'444'
-                })
-
             }
         }
     })
@@ -110,6 +117,7 @@
 //    methods =>方法，这个没什么说的
 
 </script>
+
 </body>
 </html>
 

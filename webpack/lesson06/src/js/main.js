@@ -39,3 +39,6 @@ var data = {
     address: 'shanghai.'
 }
 $('#test_tpl').html(htmlTpl(infoTpl,data));
+
+$('#test_tpl').animate({scorllTop:'300px;'})
+

@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "在popup中获取页面元素",
+    "version": "1.0",
+    "description": "在popup中获取页面元素",
+    "browser_action": { // 就是url栏右侧那些小图标
+        "default_popup": "popup.html"// 点击图标后展示的气泡框页面（独立页面，可加载js / css）
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["js/main.js"]
+        }
+    ]
+}

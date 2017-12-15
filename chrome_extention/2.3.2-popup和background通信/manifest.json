@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "name": "一个popup和background通信的例子",
+    "version": "1.0",
+    "browser_action": { // 就是url栏右侧那些小图标
+        "default_title": "一个popup和background通信的例子",
+        "default_popup": "popup.html"// 点击图标后展示的气泡框页面（独立页面，可加载js / css）
+    },
+    "background": {
+        "scripts": ["js/background.js"]
+    }
+}

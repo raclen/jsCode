@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,// 插件标准版本，目前统一是2
+  "name": "上海黄金",// 插件名称，显示在插件详情和插件商店中
+  "version": "1.0.0",// 插件版本,发布到插件商店后，如果有修改插件代码，需要修改这里
+
+  "description": "上海黄金价格",// 简介
+  "icons": {
+    "32": "assets/32.png",
+    "48": "assets/48.png",
+    "64": "assets/64.png",
+    "128": "assets/128.png"
+  },
+  "browser_action": { // 就是url栏右侧那些小图标
+    "default_icon": {
+        "32": "assets/32.png"// 展示出来的图标图片
+    },
+    "default_title": "上海黄金默认标题",
+    "default_popup": "popup.html"// 点击图标后展示的气泡框页面（独立页面，可加载js / css）
+  },
+  "permissions": [// 插件权限设置，规则较多，建议看官方文档
+    "notifications"
+  ],
+  "background": {
+    "scripts": ["assets/main.js"]
+  }
+
+}

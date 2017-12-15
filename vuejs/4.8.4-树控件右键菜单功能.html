@@ -159,9 +159,8 @@
                     case '5':
                         parentModel.forEach(function(item,i){
                             if(item.menuCode === model.menuCode){
-                                if(i!==parentModel.length-1){
                                     parentModel.splice(i,1);
-                                }
+
 
                             }
                         });
@@ -277,7 +276,6 @@
                 document.querySelectorAll('.newnode').forEach(function(item,i){
                     item.style.display='none';
                 })
-
             }
         }
     })

@@ -16,6 +16,9 @@
     <div class="grid_6 omega contents">
         <p><b><a href="/<%=from_user%>"><%=from_user%></a>:</b> <%=text%></p>
     </div>
+        <ul>
+            <li></li>
+        </ul>
     </div>
 </script>
 </body>
@@ -26,7 +29,8 @@
         i:2,
         profile_image_url:'111111',
         from_user:'wanlitong.com',
-        text :'max'
+        text :'max',
+        list:[1,2,3,4,5]
     }
     var results = document.getElementById("results");
     results.innerHTML = tmpl("item_tmpl", dataObject);

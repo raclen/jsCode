@@ -1,0 +1,8 @@
+{
+  "manifest_version": 2,
+  "name": "备忘录",
+  "version": "1.0",
+  "browser_action": { // 就是url栏右侧那些小图标
+    "default_popup": "popup.html"// 点击图标后展示的气泡框页面（独立页面，可加载js / css）
+  }
+}

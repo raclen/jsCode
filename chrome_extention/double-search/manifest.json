@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "double-search",
+    "version": "1.0.0",
+    "description": "一次回车，两个结果，double search",
+    "icons": {
+        "128": "assets/coollogo_d128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "16": "assets/coollogo_d128.png",
+            "19": "assets/coollogo_d128.png",
+            "38": "assets/coollogo_d128.png"
+        },
+        "default_title": "double-search",
+        "default_popup": "popup.html"
+    },
+    "options_page": "index.html"
+}
+

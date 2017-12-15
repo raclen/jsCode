@@ -9,7 +9,7 @@
 <body>
 <div id="app">
     {{message}}
-    <child-component v-on:addmessage="addMessageFn"></child-component>
+    <child-component @add_message="addMessageFn"></child-component>
 </div>
 <script src="src/vue.js"></script>
 <script>
@@ -34,11 +34,13 @@
                 template: '<div><input type="text" v-model="message"/><input type="button" value="add" @click="addMsg()"/></div>',
                 methods: {
                     addMsg: function () {
-                        this.$emit('addmessage', this.message)
+                        this.$emit('add_message', this.message)
                         this.message = ''
                     }
                 }
             }
+        },
+        mounted:function(){
         }
     })
     //自定义事件主要是通过v-on和$emit来实现

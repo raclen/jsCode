@@ -16,7 +16,7 @@
 </div>
 <template id="tree-component">
     <li>
-        {{ model.menuName }}
+        {{ model.menuName }}<input type="text" v-model="model.menuName">
         <ul>
             <tree-component v-for="item in model.children" :model="item"></tree-component>
         </ul>

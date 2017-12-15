@@ -1,0 +1,11 @@
+{
+    "manifest_version": 2,
+    "name": "一个background和content_scripts交互的例子",
+    "version": "1.0",
+    "browser_action": { // 就是url栏右侧那些小图标
+        "default_title": "默认title"
+    },
+    "background": {
+        "scripts": ["js/main.js"]
+    }
+}

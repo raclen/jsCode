@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "一个content_scripts和background通信的例子",
+    "version": "1.0",
+    "description": "一个content_scripts和background通信的例子",
+    "content_scripts": [
+        {
+            "matches": ["*://piao.ctrip.com/*"],
+            "js": ["js/main.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["js/background.js"]
+    }
+}
